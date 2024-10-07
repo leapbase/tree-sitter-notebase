@@ -25,7 +25,7 @@ module.exports = grammar({
 
         ...common.rules,
         _last_token_punctuation: $ => choice(), // needed for compatability with common rules
-
+        
         // BLOCK STRUCTURE
 
         // All blocks. Every block contains a trailing newline.
@@ -45,8 +45,21 @@ module.exports = grammar({
             $._blank_line,
             $.html_block,
             $.link_reference_definition,
+            $.note_title, 
             common.EXTENSION_PIPE_TABLE ? $.pipe_table : choice(),
         ),
+        
+        note_title_marker: $ => '########',
+        note_title_content: $ => prec(1, seq(
+            optional($._whitespace),
+            field('title_content', alias($._line, $.inline))
+        )),
+        note_title: $ => prec(1, seq(
+            $.note_title_marker,
+            optional($.note_title_content),
+            $._newline
+        )),
+        
         section: $ => choice($._section1, $._section2, $._section3, $._section4, $._section5, $._section6),
         _section1: $ => prec.right(seq(
             alias($._atx_heading1, $.atx_heading),
