@@ -1,6 +1,6 @@
 {
   "name": "tree-sitter-notebase",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "Notebase grammar for tree-sitter",
   "repository": "github:leapbase/tree-sitter-notebase",
   "author": "leapbase",
