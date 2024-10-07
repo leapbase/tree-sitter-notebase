@@ -1,9 +1,9 @@
 {
-  "name": "@tree-sitter-grammars/tree-sitter-markdown",
+  "name": "tree-sitter-notebase",
   "version": "0.3.2",
-  "description": "Markdown grammar for tree-sitter",
-  "repository": "github:tree-sitter-grammars/tree-sitter-markdown",
-  "author": "MDeiml (https://github.com/MDeiml)",
+  "description": "Notebase grammar for tree-sitter",
+  "repository": "github:leapbase/tree-sitter-notebase",
+  "author": "leapbase",
   "license": "MIT",
   "main": "bindings/node",
   "types": "bindings/node",
@@ -11,7 +11,7 @@
     "incremental",
     "parsing",
     "tree-sitter",
-    "markdown"
+    "notebase"
   ],
   "files": [
     "binding.gyp",
